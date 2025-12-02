@@ -10,7 +10,7 @@ Assistant juridique intelligent basé sur l'IA qui répond aux questions selon l
 - **Interface Moderne** : Landing page 3D interactive avec Spline, design dark mode
 - **Historique Persistant** : Sauvegarde automatique des conversations
 - **Cache Intelligent** : Réponses rapides pour questions similaires
-- **LLM Hybride** : Ollama (local) + Gemini (validation)
+- **LLM Hybride** : Ollama (local)
 
 ## 🏗️ Architecture
 
@@ -25,7 +25,7 @@ assistjur/
 │   │   │   ├── csv_processor.py    # Traitement CSV
 │   │   │   ├── vector_store.py     # ChromaDB
 │   │   │   ├── rag_service.py      # Pipeline RAG
-│   │   │   └── llm_service.py      # Ollama + Gemini
+│   │   │   └── llm_service.py      # Ollama
 │   │   └── api/              # Endpoints
 │   ├── requirements.txt
 │   └── Dockerfile
@@ -50,7 +50,7 @@ assistjur/
 - **3 agents spécialistes** : chacun ne consulte qu'un fichier CSV (`dataset1/2/3.csv`) et extrait les articles pertinents en parallèle.
 - **Agent superviseur** : consolide les briefs, arbitre les divergences et renvoie une réponse unique citant les sources.
 - **LLM commun** : les agents s'appuient sur Ollama (par défaut) mais peuvent être redirigés vers un autre modèle via `CREW_MODEL`.
-- **Fallback automatique** : si CrewAI est désactivé ou indisponible, le pipeline RAG classique (Ollama + Gemini) prend le relais.
+- **Fallback automatique** : si CrewAI est désactivé ou indisponible, le pipeline RAG classique (Ollama) prend le relais.
 - **Configuration** : ajustez `ENABLE_CREW_AGENTS`, `CREW_AGENT_TOP_K`, `CREW_MIN_SCORE` et les températures pour équilibrer vitesse / précision.
 
 ## 🚀 Démarrage Rapide
@@ -257,7 +257,6 @@ GET /health
 - **ChromaDB** : Base vectorielle pour embeddings
 - **CrewAI** : Orchestration multi-agent
 - **Ollama** : LLM local (llama2/mistral)
-- **Gemini** : Validation et fallback
 - **Pydantic** : Validation des données
 
 ### Frontend
@@ -325,7 +324,7 @@ CORS_ORIGINS=["http://localhost:4200"]
 - Backend FastAPI avec RAG pipeline complet
 - CrewAI multi-agent (3 agents + superviseur)
 - ChromaDB vectorisation et recherche sémantique
-- Ollama + Gemini LLM intégration
+- Ollama LLM intégration
 - Frontend Angular avec Material Design
 - Landing page 3D interactive (Spline)
 - Dark mode avec animations modernes
