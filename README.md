@@ -315,7 +315,7 @@ CORS_ORIGINS=["http://localhost:4200"]
 
 - **Premier démarrage** : 5-10 minutes (téléchargement modèle)
 - **Rechargement données** : 1-3 minutes selon la taille
-- **Réponse moyenne** : 2-5 secondes
+- **Réponse moyenne** : presque 10 min (multi agents , ressources matérielles ...) optimisable en cas d'utilisation d'une config avancée (nvidia rtx ...)
 - **Mémoire recommandée** : 16GB+ RAM
 
 ## 🎯 État Actuel
