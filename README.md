@@ -340,10 +340,6 @@ CORS_ORIGINS=["http://localhost:4200"]
 - [ ] Tests unitaires et e2e complets
 - [ ] Monitoring et analytics
 
-## 📄 Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-
 ## 🤝 Contribution
 
 Les contributions sont les bienvenues ! Merci de :
@@ -354,14 +350,9 @@ Les contributions sont les bienvenues ! Merci de :
 4. Push vers la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrir une Pull Request
 
-## 📞 Support
-
-Pour toute question ou problème :
-
-- **Issues GitHub** : Signaler les bugs et demandes de fonctionnalités
-- **Documentation** : Consulter ce README et les commentaires du code
-- **API Docs** : http://localhost:8000/docs (Swagger UI)
-
 ---
 
 **Note importante** : Cet assistant fournit des informations basées sur les documents fournis et ne remplace pas l'avis d'un avocat professionnel. Toujours consulter un juriste qualifié pour des conseils juridiques spécifiques.
+
+---
+## Développé par : ID BEN AHMED Aissam
