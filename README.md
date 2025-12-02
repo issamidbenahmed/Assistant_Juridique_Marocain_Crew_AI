@@ -80,7 +80,7 @@ curl -fsSL https://ollama.ai/install.sh | sh
 
 **3. Télécharger un modèle LLM**
 ```bash
-ollama pull llama2
+ollama pull qwen2.5:7b
 ```
 
 **4. Backend - Installation**
@@ -125,7 +125,7 @@ Créer un fichier `.env` dans le dossier `backend/` :
 ```env
 # Ollama
 OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=llama2
+OLLAMA_MODEL=qwen2.5:7b
 
 # Gemini (optionnel)
 GEMINI_API_KEY=your_api_key_here
@@ -142,7 +142,7 @@ DATA_DIRECTORY=../data
 ENABLE_CREW_AGENTS=true
 CREW_AGENT_TOP_K=3
 CREW_MIN_SCORE=0.05
-CREW_MODEL=ollama/llama2  # vide = même modèle que Ollama
+CREW_MODEL=ollama/qwen2.5:7b  # vide = même modèle que Ollama
 CREW_TEMPERATURE=0.20
 CREW_SUPERVISOR_TEMPERATURE=0.15
 
@@ -157,7 +157,7 @@ CORS_ORIGINS=["http://localhost:4200"]
 
 ### Modèles Ollama recommandés
 
-- **llama2** : Modèle généraliste, bon pour le français
+- **qwen2.5:7b** : Modèle généraliste et rapide, bon pour le français
 - **mistral** : Modèle compact et efficace
 - **codellama** : Spécialisé pour le code et la logique
 
@@ -256,7 +256,7 @@ GET /health
 - **FastAPI** : API REST moderne et performante
 - **ChromaDB** : Base vectorielle pour embeddings
 - **CrewAI** : Orchestration multi-agent
-- **Ollama** : LLM local (llama2/mistral)
+- **Ollama** : LLM local (qwen2.5:7b/mistral)
 - **Pydantic** : Validation des données
 
 ### Frontend
@@ -290,7 +290,7 @@ docker-compose restart ollama
 ollama list
 
 # Télécharger un modèle
-ollama pull llama2
+ollama pull qwen2.5:7b
 ```
 
 3. **Erreur de vectorisation**
