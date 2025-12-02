@@ -1,0 +1,428 @@
+<!-- ============================================
+     MODERN LEGAL ASSISTANT - DARK MODE
+     ============================================ -->
+
+<!-- ============================================
+     LANDING PAGE - Full Screen with Spline 3D
+     ============================================ -->
+<div *ngIf="showLanding"
+  class="landing-page h-screen overflow-hidden bg-gradient-to-br from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e] relative">
+
+  <!-- Animated Background Gradient -->
+  <div class="absolute inset-0 opacity-30">
+    <div
+      class="absolute top-0 left-0 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob">
+    </div>
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000">
+    </div>
+    <div
+      class="absolute bottom-0 left-1/2 w-96 h-96 bg-violet-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000">
+    </div>
+  </div>
+
+  <!-- Content Container - Split Layout -->
+  <div class="relative z-10 h-full flex items-center px-4 sm:px-6 lg:px-12">
+
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Left Side - Text Content -->
+      <div class="text-left animate-slide-up">
+
+        <!-- Title -->
+        <h1 class="font-black mb-6 whitespace-nowrap" style="font-size: clamp(2rem, 5vw, 5rem); line-height: 1.2;">
+          <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+            Assistant Juridique Marocain
+          </span>
+        </h1>
+
+        <!-- Description -->
+        <p class="text-base sm:text-lg lg:text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
+          Propulsé par une intelligence artificielle multi-agents utilisant <span
+            class="text-purple-400 font-semibold">CrewAI</span>,
+          notre assistant analyse vos questions juridiques avec précision. Trois agents spécialisés travaillent en
+          parallèle
+          pour vous fournir des réponses fiables basées sur la législation marocaine officielle.
+        </p>
+
+        <!-- CTA Button -->
+        <button (click)="startChat()"
+          class="group relative inline-flex items-center justify-center px-12 py-5 text-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-full overflow-hidden shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105">
+          <span class="relative z-10 flex items-center space-x-3">
+            <span>Commencer</span>
+            <mat-icon class="transform group-hover:translate-x-1 transition-transform text-2xl">arrow_forward</mat-icon>
+          </span>
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+        </button>
+
+        <!-- Features -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12">
+          <div
+            class="feature-card group p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+            <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-purple-500/30 transition-all duration-300">
+              <mat-icon class="text-purple-400 text-xl group-hover:rotate-12 transition-transform duration-300">psychology</mat-icon>
+            </div>
+            <h3 class="text-white font-semibold text-sm mb-1 group-hover:text-purple-300 transition-colors">3 Agents IA</h3>
+            <p class="text-white/60 text-xs">Analyse parallèle</p>
+          </div>
+
+          <div
+            class="feature-card group p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-pink-500/50 hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+            <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-pink-500/30 transition-all duration-300">
+              <mat-icon class="text-pink-400 text-xl group-hover:rotate-12 transition-transform duration-300">verified</mat-icon>
+            </div>
+            <h3 class="text-white font-semibold text-sm mb-1 group-hover:text-pink-300 transition-colors">Sources Officielles</h3>
+            <p class="text-white/60 text-xs">Lois marocaines</p>
+          </div>
+
+          <div
+            class="feature-card group p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+            <div class="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-violet-500/30 transition-all duration-300">
+              <mat-icon class="text-violet-400 text-xl group-hover:rotate-12 transition-transform duration-300">bolt</mat-icon>
+            </div>
+            <h3 class="text-white font-semibold text-sm mb-1 group-hover:text-violet-300 transition-colors">Cache Intelligent</h3>
+            <p class="text-white/60 text-xs">Réponses rapides</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Spline 3D Interactive Animation -->
+      <div class="animate-fade-in relative overflow-visible" style="animation-delay: 0.3s;">
+        <iframe src="https://my.spline.design/reactiveorbcopy-PhtYeXRkJyc6JRYZylKRmmBK/" frameborder="0" width="100%"
+          height="700px" class="spline-iframe border-0 scale-125" allow="fullscreen; autoplay; vr" loading="eager"
+          style="background: transparent; transform-origin: center; will-change: transform;">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     CHAT APPLICATION - Dark Mode
+     ============================================ -->
+<div *ngIf="!showLanding"
+  class="app-container min-h-screen flex flex-col bg-gradient-to-br from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e]">
+
+  <!-- ============================================
+       NAVIGATION BAR - Dark Glassmorphism
+       ============================================ -->
+  <nav class="glass-dark sticky top-0 z-50 border-b border-white/10 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+        <!-- Logo & Title -->
+        <div class="flex items-center space-x-3 animate-fade-in">
+          <button (click)="goToLanding()"
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
+            <mat-icon class="text-white">gavel</mat-icon>
+          </button>
+          <span
+            class="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hidden sm:block">{{
+            title }}</span>
+        </div>
+
+        <!-- Status & Actions -->
+        <div class="flex items-center space-x-4">
+
+          <!-- Status Indicator -->
+          <div
+            class="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+            <div class="relative">
+              <div [class]="isServiceReady ? 'w-2 h-2 bg-green-400 rounded-full' : 'w-2 h-2 bg-red-400 rounded-full'">
+              </div>
+              <div
+                [class]="isServiceReady ? 'w-2 h-2 bg-green-400 rounded-full absolute top-0 animate-ping' : 'w-2 h-2 bg-red-400 rounded-full absolute top-0 animate-ping'">
+              </div>
+            </div>
+            <span class="text-xs font-medium text-white/70 hidden sm:block">
+              {{ isServiceReady ? 'En ligne' : 'Hors ligne' }}
+            </span>
+          </div>
+
+          <!-- Menu Button -->
+          <button mat-icon-button [matMenuTriggerFor]="menu"
+            class="text-white hover:bg-white/10 rounded-xl transition-all duration-300">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+
+          <mat-menu #menu="matMenu" class="rounded-2xl">
+            <button mat-menu-item (click)="showHistory = !showHistory" class="flex items-center space-x-3">
+              <mat-icon class="text-purple-400">history</mat-icon>
+              <span>Historique</span>
+              <mat-badge [matBadge]="history.length" matBadgeColor="accent" *ngIf="history.length > 0"
+                class="ml-auto"></mat-badge>
+            </button>
+            <button mat-menu-item (click)="reloadData()" [disabled]="isLoading" class="flex items-center space-x-3">
+              <mat-icon class="text-pink-400">refresh</mat-icon>
+              <span>Recharger les données</span>
+            </button>
+            <button mat-menu-item (click)="clearHistory()" [disabled]="history.length === 0"
+              class="flex items-center space-x-3">
+              <mat-icon class="text-red-400">clear_all</mat-icon>
+              <span>Vider l'historique</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="checkServiceHealth()" class="flex items-center space-x-3">
+              <mat-icon class="text-green-400">health_and_safety</mat-icon>
+              <span>Vérifier le service</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       MAIN CONTENT - Sidenav Container
+       ============================================ -->
+  <div class="flex-1 flex overflow-hidden">
+    <mat-sidenav-container class="flex-1 bg-transparent">
+
+      <!-- ============================================
+           HISTORY SIDEBAR - Dark Glassmorphism
+           ============================================ -->
+      <mat-sidenav #sidenav mode="side" [opened]="showHistory"
+        class="w-80 glass-dark border-r border-white/10 backdrop-blur-xl overflow-x-hidden">
+
+        <!-- Sidebar Header -->
+        <div class="p-6 border-b border-white/10">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-bold text-white">Historique</h2>
+            <button mat-icon-button (click)="showHistory = false" class="text-white hover:bg-white/10 rounded-xl">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+          <p class="text-sm text-white/50 mt-1">{{ history.length }} conversation(s)</p>
+        </div>
+
+        <!-- History List -->
+        <div class="p-4 space-y-2 overflow-y-auto overflow-x-hidden scrollbar-thin" style="max-height: calc(100vh - 140px);">
+          <div *ngFor="let entry of history" (click)="loadFromHistory(entry)"
+            class="p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition-all duration-300 hover:scale-[1.02] group">
+            <p class="text-sm font-medium text-white line-clamp-2 group-hover:text-purple-400 transition-colors">
+              {{ entry.question }}
+            </p>
+            <p class="text-xs text-white/40 mt-2">
+              {{ entry.timestamp | date:'short' }}
+            </p>
+          </div>
+
+          <!-- Empty State -->
+          <div *ngIf="history.length === 0" class="flex flex-col items-center justify-center py-20 text-center">
+            <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4">
+              <mat-icon class="text-white/40 text-4xl">chat_bubble_outline</mat-icon>
+            </div>
+            <p class="text-white/40 text-sm">Aucune conversation</p>
+          </div>
+        </div>
+      </mat-sidenav>
+
+      <!-- ============================================
+           CHAT AREA - Main Content
+           ============================================ -->
+      <mat-sidenav-content class="bg-transparent">
+        <div class="chat-container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col h-full">
+
+          <!-- ============================================
+               MESSAGES AREA
+               ============================================ -->
+          <div class="flex-1 space-y-4 pb-6" 
+               [class.overflow-y-auto]="messages.length > 0" 
+               [class.overflow-hidden]="messages.length === 0"
+               [class.scrollbar-thin]="messages.length > 0"
+               #chatMessages>
+
+            <!-- ============================================
+                 WELCOME SCREEN - Dark Hero
+                 ============================================ -->
+            <div *ngIf="messages.length === 0"
+              class="flex flex-col items-center justify-center min-h-[50vh] text-center animate-fade-in py-8">
+
+              <!-- Animated Icon -->
+              <div class="relative mb-6">
+                <div
+                  class="w-20 h-20 rounded-3xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center shadow-2xl animate-bounce-slow">
+                  <mat-icon class="text-white text-4xl">gavel</mat-icon>
+                </div>
+                <div
+                  class="absolute inset-0 w-20 h-20 rounded-3xl bg-gradient-to-br from-purple-600 to-pink-600 animate-ping opacity-20">
+                </div>
+              </div>
+
+              <!-- Title -->
+              <h1 class="text-3xl sm:text-4xl font-bold mb-3 animate-slide-up">
+                <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Posez votre
+                  question</span>
+              </h1>
+
+              <!-- Description -->
+              <p class="text-base sm:text-lg text-white/60 max-w-2xl mb-6 animate-slide-up px-4" style="animation-delay: 0.2s;">
+                Obtenez des réponses précises basées sur la législation marocaine
+              </p>
+
+              <!-- Service Warning -->
+              <div *ngIf="!isServiceReady"
+                class="flex items-center space-x-2 px-6 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 animate-slide-up"
+                style="animation-delay: 0.3s;">
+                <mat-icon>warning</mat-icon>
+                <span class="font-medium">Le service n'est pas disponible</span>
+              </div>
+            </div>
+
+            <!-- ============================================
+                 CHAT MESSAGES - Dark Mode
+                 ============================================ -->
+            <div *ngFor="let message of messages"
+              [class]="message.type === 'user' ? 'flex justify-end animate-slide-up' : 'flex justify-start animate-slide-up'">
+
+              <!-- Message Card -->
+              <div
+                [class]="message.type === 'user' 
+                            ? 'max-w-[80%] sm:max-w-[70%] rounded-2xl rounded-tr-sm p-4 bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-lg' 
+                            : 'max-w-[85%] sm:max-w-[75%] rounded-2xl rounded-tl-sm p-5 glass-dark border border-white/10 shadow-xl'">
+
+                <!-- Message Content -->
+                <div [class]="message.type === 'user' ? 'text-white' : 'text-white/90'">
+                  <p class="whitespace-pre-wrap leading-relaxed">{{ message.content }}</p>
+                </div>
+
+                <!-- Sources Section -->
+                <div *ngIf="message.type === 'assistant' && message.sources && message.sources.length > 0" class="mt-4">
+                  <mat-expansion-panel class="rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-sm">
+                    <mat-expansion-panel-header class="hover:bg-white/10 transition-colors">
+                      <mat-panel-title class="flex items-center space-x-2">
+                        <mat-icon class="text-purple-400">source</mat-icon>
+                        <span class="font-semibold text-white">Sources ({{ message.sources.length }})</span>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <!-- Sources List -->
+                    <div class="space-y-3 p-2">
+                      <div *ngFor="let source of message.sources"
+                        class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/30 hover:bg-white/10 transition-all duration-300">
+
+                        <!-- Source Header -->
+                        <div class="flex items-start justify-between mb-3">
+                          <div class="flex-1">
+                            <h4 class="font-semibold text-white text-sm">
+                              {{ source.doc }}
+                              <span *ngIf="source.article" class="text-purple-400"> - {{ source.article }}</span>
+                            </h4>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                              <span *ngIf="source.titre"
+                                class="px-2 py-1 text-xs rounded-full bg-purple-500/20 text-purple-300 font-medium">
+                                {{ source.titre }}
+                              </span>
+                              <span *ngIf="source.chapitre"
+                                class="px-2 py-1 text-xs rounded-full bg-pink-500/20 text-pink-300 font-medium">
+                                {{ source.chapitre }}
+                              </span>
+                              <span class="px-2 py-1 text-xs rounded-full bg-white/10 text-white/70 font-medium">
+                                {{ source.source_file }}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Source Content -->
+                        <p
+                          class="text-sm text-white/70 leading-relaxed p-3 bg-white/5 rounded-lg border-l-4 border-purple-500">
+                          {{ source.contenu }}
+                        </p>
+
+                        <!-- Source Meta -->
+                        <div class="flex items-center justify-between mt-3 text-xs text-white/50">
+                          <span *ngIf="source.pages" class="flex items-center space-x-1">
+                            <mat-icon class="text-sm">description</mat-icon>
+                            <span>Pages: {{ source.pages }}</span>
+                          </span>
+                          <span class="flex items-center space-x-1">
+                            <mat-icon class="text-sm">trending_up</mat-icon>
+                            <span>{{ (source.relevance_score * 100).toFixed(1) }}%</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-expansion-panel>
+                </div>
+
+                <!-- Timestamp -->
+                <div
+                  [class]="message.type === 'user' ? 'text-xs text-white/50 mt-2 text-right' : 'text-xs text-white/40 mt-3 text-right'">
+                  {{ message.timestamp | date:'short' }}
+                </div>
+              </div>
+            </div>
+
+            <!-- ============================================
+                 LOADING INDICATOR - Dark Animated
+                 ============================================ -->
+            <div *ngIf="isLoading" class="flex justify-start animate-fade-in">
+              <div class="max-w-[75%] rounded-2xl rounded-tl-sm p-5 glass-dark border border-white/10 shadow-xl">
+                <div class="flex items-center space-x-3">
+                  <div class="flex space-x-1">
+                    <div class="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+                    <div class="w-2 h-2 bg-pink-400 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+                    <div class="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style="animation-delay: 0.4s;"></div>
+                  </div>
+                  <span class="text-sm text-white/70 font-medium">L'assistant analyse votre question...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================================
+               INPUT AREA - Dark Glassmorphism
+               ============================================ -->
+          <div class="glass-dark rounded-2xl border border-white/10 shadow-2xl p-4 mt-4">
+
+            <!-- Input Row -->
+            <div class="flex items-end space-x-3">
+
+              <!-- Text Input -->
+              <div class="flex-1">
+                <textarea [(ngModel)]="currentQuestion" (keypress)="onKeyPress($event)"
+                  [disabled]="isLoading || !isServiceReady" rows="2" placeholder="Posez votre question juridique..."
+                  class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none resize-none transition-all duration-300 text-white placeholder-white/40">
+                </textarea>
+                <p class="text-xs text-white/40 mt-2 px-1">
+                  Appuyez sur <kbd class="px-2 py-0.5 rounded bg-white/10 text-white/70 font-mono text-xs">Entrée</kbd>
+                  pour envoyer
+                </p>
+              </div>
+
+              <!-- Send Button -->
+              <button mat-fab color="primary" (click)="askQuestion()"
+                [disabled]="!currentQuestion.trim() || isLoading || !isServiceReady"
+                class="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed bg-gradient-to-br from-purple-600 to-pink-600">
+                <mat-icon>send</mat-icon>
+              </button>
+            </div>
+
+            <!-- Configuration Row -->
+            <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/10">
+              <div class="flex items-center space-x-2">
+                <mat-icon class="text-white/50 text-sm">settings</mat-icon>
+                <span class="text-xs text-white/60 font-medium">Configuration</span>
+              </div>
+
+              <div class="flex items-center space-x-3">
+                <label class="text-xs text-white/60">Limite de contexte:</label>
+                <select [(ngModel)]="contextLimit"
+                  class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-sm text-white focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 outline-none transition-all">
+                  <option [value]="3">3 sources</option>
+                  <option [value]="5">5 sources</option>
+                  <option [value]="7">7 sources</option>
+                  <option [value]="10">10 sources</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

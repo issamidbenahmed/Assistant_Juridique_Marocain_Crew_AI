@@ -1,0 +1,186 @@
+/* ============================================
+   MODERN LEGAL ASSISTANT - GLOBAL STYLES
+   ============================================ */
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Angular Material theme */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Google Fonts - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ============================================
+   BASE STYLES - DARK MODE
+   ============================================ */
+@layer base {
+  html, body { 
+    @apply h-full;
+  }
+
+  body { 
+    @apply m-0 font-sans antialiased;
+    @apply bg-gradient-to-br from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e];
+    @apply text-white;
+    @apply overflow-x-hidden;
+  }
+
+  * {
+    @apply transition-colors duration-200;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-slate-100 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full hover:bg-slate-400;
+    @apply transition-colors duration-200;
+  }
+
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+
+  .glass-dark {
+    @apply bg-slate-900/70 backdrop-blur-xl border border-white/10;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent;
+  }
+
+  /* Animated gradient background */
+  .animated-gradient {
+    background: linear-gradient(
+      -45deg,
+      #0ea5e9,
+      #6366f1,
+      #a855f7,
+      #ec4899
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+
+  .glow-hover:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+  }
+}
+
+/* ============================================
+   ANGULAR MATERIAL OVERRIDES
+   ============================================ */
+
+/* Material toolbar */
+.mat-toolbar {
+  @apply glass;
+  @apply border-b border-slate-200/50;
+}
+
+/* Material cards */
+.mat-mdc-card {
+  @apply rounded-2xl;
+  @apply shadow-lg;
+  @apply border border-slate-200/50;
+}
+
+/* Material buttons */
+.mat-mdc-fab {
+  @apply shadow-lg;
+  @apply hover:shadow-xl;
+  @apply transition-all duration-300;
+}
+
+/* Material form fields */
+.mat-mdc-form-field {
+  @apply w-full;
+}
+
+/* Material expansion panel */
+.mat-expansion-panel {
+  @apply rounded-xl;
+  @apply border border-slate-200/50;
+  @apply shadow-sm;
+}
+
+/* Material chips */
+.mat-mdc-chip {
+  @apply rounded-full;
+  @apply text-xs;
+}
+
+/* ============================================
+   LEGACY STYLES (for compatibility)
+   ============================================ */
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .chat-container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-container {
+    padding: 8px;
+  }
+}

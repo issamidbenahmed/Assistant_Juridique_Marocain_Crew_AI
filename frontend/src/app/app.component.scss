@@ -1,0 +1,448 @@
+/* ============================================
+   MODERN LEGAL ASSISTANT - DARK MODE
+   ============================================ */
+
+/* ============================================
+   LANDING PAGE
+   ============================================ */
+
+.landing-page {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.5) transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.5), rgba(236, 72, 153, 0.5));
+    border-radius: 10px;
+
+    &:hover {
+      background: linear-gradient(180deg, rgba(139, 92, 246, 0.7), rgba(236, 72, 153, 0.7));
+    }
+  }
+}
+
+/* ============================================
+   FEATURE CARDS - Modern Hover Effects
+   ============================================ */
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+/* ============================================
+   LANDING PAGE ANIMATIONS
+   ============================================ */
+
+@keyframes blob {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(20px, -50px) scale(1.1);
+  }
+
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  75% {
+    transform: translate(50px, 50px) scale(1.05);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* ============================================
+   GENERAL ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+/* ============================================
+   CUSTOM UTILITIES
+   ============================================ */
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a,
+.cursor-pointer {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   GLASSMORPHISM EFFECTS - DARK
+   ============================================ */
+
+.glass-dark {
+  background: rgba(26, 11, 46, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   MATERIAL OVERRIDES - DARK MODE
+   ============================================ */
+
+/* Toolbar */
+::ng-deep .mat-toolbar {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* FAB Button */
+::ng-deep .mat-mdc-fab {
+  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.3), 0 8px 10px -6px rgba(236, 72, 153, 0.3) !important;
+
+  &:hover:not([disabled]) {
+    box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.5), 0 10px 10px -5px rgba(236, 72, 153, 0.5) !important;
+    transform: translateY(-2px);
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+/* Expansion Panel - Dark */
+::ng-deep .mat-expansion-panel {
+  box-shadow: none !important;
+  background: transparent !important;
+  color: white !important;
+
+  &:not(.mat-expanded) {
+    .mat-expansion-panel-header:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+}
+
+::ng-deep .mat-expansion-panel-header {
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  color: white !important;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 16px !important;
+  background: transparent !important;
+}
+
+::ng-deep .mat-expansion-indicator::after {
+  color: white !important;
+}
+
+/* Menu - Dark */
+::ng-deep .mat-mdc-menu-panel {
+  border-radius: 16px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2) !important;
+  background: rgba(26, 11, 46, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+::ng-deep .mat-mdc-menu-item {
+  border-radius: 8px !important;
+  margin: 4px 8px !important;
+  color: white !important;
+
+  &:hover {
+    background-color: rgba(139, 92, 246, 0.2) !important;
+  }
+
+  .mat-icon {
+    color: inherit !important;
+  }
+}
+
+/* Sidenav - Dark */
+::ng-deep .mat-drawer {
+  background: transparent !important;
+  border: none !important;
+}
+
+::ng-deep .mat-drawer-container {
+  background: transparent !important;
+}
+
+/* Badge */
+::ng-deep .mat-badge-content {
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%) !important;
+  font-weight: 600 !important;
+}
+
+/* Icon */
+::ng-deep .mat-icon {
+  width: auto !important;
+  height: auto !important;
+  font-size: inherit !important;
+}
+
+/* Select - Dark */
+::ng-deep .mat-mdc-select {
+  color: white !important;
+}
+
+::ng-deep .mat-mdc-select-value {
+  color: white !important;
+}
+
+::ng-deep .mat-mdc-select-arrow {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR - DARK
+   ============================================ */
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.5) transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(139, 92, 246, 0.5);
+    border-radius: 9999px;
+
+    &:hover {
+      background-color: rgba(139, 92, 246, 0.7);
+    }
+  }
+}
+
+/* ============================================
+   HOVER EFFECTS
+   ============================================ */
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.hover\:-translate-y-1:hover {
+  transform: translateY(-0.25rem);
+}
+
+/* ============================================
+   KBD STYLING - DARK
+   ============================================ */
+
+kbd {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 640px) {
+  .chat-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Adjust message widths on mobile */
+  .max-w-\[80\%\] {
+    max-width: 90% !important;
+  }
+
+  .max-w-\[85\%\] {
+    max-width: 95% !important;
+  }
+
+  /* Landing page adjustments */
+  .landing-page {
+    iframe {
+      height: 300px !important;
+    }
+  }
+}
+
+/* ============================================
+   IFRAME STYLING
+   ============================================ */
+
+iframe {
+  border: none;
+}
+
+.spline-iframe {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: hidden;
+
+  /* Performance optimizations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+
+  /* Force transparent background */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  /* Hide Spline logo watermark */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 60px;
+    background: linear-gradient(to top, rgba(26, 11, 46, 1) 0%, rgba(26, 11, 46, 0.9) 50%, transparent 100%);
+    pointer-events: none;
+    z-index: 10;
+  }
+}
+
+/* Additional CSS to hide Spline watermark inside iframe */
+::ng-deep .spline-iframe {
+
+  /* Try to hide any watermark elements */
+  [class*="watermark"],
+  [class*="logo"],
+  [id*="watermark"],
+  [id*="logo"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
+
+/* =
+===========================================
+   HISTORY SIDEBAR - Prevent Horizontal Scroll
+   ============================================ */
+
+::ng-deep .mat-drawer.mat-drawer-side {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}

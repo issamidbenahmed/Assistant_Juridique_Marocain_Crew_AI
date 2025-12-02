@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # Ollama pour les modèles LLM locaux
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped
+    # Commande pour télécharger le modèle au démarrage
+    command: >
+      sh -c "
+        ollama serve &
+        sleep 10 &&
+        ollama pull llama2 &&
+        wait
+      "
+
+  # Backend FastAPI
+  backend:
+    build: ./backend
+    container_name: legal-assistant-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data:ro
+      - ./backend:/app
+      - chroma_data:/app/chroma_db
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - DATA_DIRECTORY=/app/data
+      - CHROMA_PERSIST_DIRECTORY=/app/chroma_db
+    depends_on:
+      - ollama
+    restart: unless-stopped
+    command: >
+      sh -c "
+        pip install -r requirements.txt &&
+        python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+      "
+
+volumes:
+  ollama_data:
+    driver: local
+  chroma_data:
+    driver: local
